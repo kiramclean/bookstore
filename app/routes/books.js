@@ -1,13 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return this.get('store').findAll('book')
+  queryParams: {
+    limit: {
+      refreshModel: true
+    }
+  },
+
+  model(params) {
+    return this.get('store').query('book', params)
   },
 
   actions: {
-    blurBackground(blur) {
-      this.controllerFor('application').set('blur', blur)
+    showAll() {
+      const total = this.controllerFor('books').get('total')
+      this.transitionTo({ queryParams: { limit: total }})
     }
   }
 });

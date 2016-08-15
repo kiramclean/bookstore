@@ -1,7 +1,6 @@
 # Bookstore
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a bookstore app I built with ember to learn how to hook it up to a Rails back end and also about how to manage polymorphic associations.
 
 ## Prerequisites
 
